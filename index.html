@@ -17,13 +17,13 @@
       }
 
       .wrap {
-        max-width: 1440px;
+        max-width: 1480px;
         margin: 0 auto;
         padding: 0 16px 40px;
       }
 
       .hero {
-        background: #111827;
+        background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
         color: #f9fafb;
         padding: 36px 0;
         margin-bottom: 24px;
@@ -49,6 +49,7 @@
         border-radius: 10px;
         padding: 16px;
         margin-bottom: 18px;
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
       }
 
       .meta {
@@ -82,34 +83,94 @@
 
       .table-wrap {
         overflow-x: auto;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
       }
 
       table {
         width: 100%;
         border-collapse: collapse;
         table-layout: fixed;
-        min-width: 980px;
+        min-width: 1060px;
       }
 
       th,
       td {
         border: 1px solid #e5e7eb;
-        padding: 8px;
+        padding: 10px 12px;
         vertical-align: top;
       }
 
       th {
         background: #f3f4f6;
         font-weight: 700;
+        position: sticky;
+        top: 0;
+        z-index: 2;
       }
 
-      td:first-child,
       th:first-child {
-        width: 190px;
+        width: 220px;
+        min-width: 220px;
+        position: sticky;
+        left: 0;
+        background: #f9fafb;
+      }
+
+      th:first-child {
+        z-index: 3;
+      }
+
+      td.direction-cell {
+        width: 220px;
+        min-width: 220px;
+        position: sticky;
+        left: 0;
+        background: #f9fafb;
+        z-index: 1;
+      }
+
+      col.col-direction {
+        width: 220px;
+      }
+
+      col.col-audio {
+        width: calc((100% - 220px) / 3);
+      }
+
+      tbody tr:nth-child(even) td {
+        background: #fbfdff;
+      }
+
+      tbody tr:hover td {
+        background: #f5faff;
+      }
+
+      tbody tr:nth-child(even) td.direction-cell,
+      tbody tr:hover td.direction-cell {
+        background: #f3f4f6;
       }
 
       audio {
+        display: block;
         width: 100%;
+        min-width: 160px;
+      }
+
+      .sample-section {
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 14px;
+        margin-bottom: 16px;
+        background: #ffffff;
+      }
+
+      .sample-section h3 {
+        margin: 0 0 8px;
+      }
+
+      .sample-section p {
+        margin-top: 0;
       }
 
       .tag {
@@ -138,6 +199,25 @@
       .small {
         font-size: 13px;
         color: #4b5563;
+      }
+
+      .direction-cell {
+        vertical-align: middle;
+        text-align: center;
+      }
+
+      @media (max-width: 860px) {
+        .hero {
+          padding: 28px 0;
+        }
+
+        h1 {
+          font-size: 26px;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
       }
     </style>
   </head>
@@ -169,6 +249,7 @@
       <section class="card">
         <h2>Speech Samples</h2>
         <p class="small" id="subset-note"></p>
+        <p class="small">Tip: each direction is grouped into stacked sample rows.</p>
         <div id="load-status" class="status" hidden></div>
         <div id="sections-container"></div>
       </section>
@@ -188,36 +269,65 @@
       }
 
       function renderSection(section) {
-        const rows = (section.samples || [])
-          .map(function (s) {
-            const tags = (s.tags || []).map(function (t) {
-              return '<span class="tag">' + t + "</span>";
-            }).join("");
+        const grouped = {};
+        const directionOrder = [];
+        (section.samples || []).forEach(function (s) {
+          const key = s.direction || "Unspecified Direction";
+          if (!grouped[key]) {
+            grouped[key] = [];
+            directionOrder.push(key);
+          }
+          grouped[key].push(s);
+        });
 
-            return (
-              "<tr>" +
-              "<td><strong>" + (s.id || "") + "</strong><br />" +
-              (s.direction || "") + "<br />" +
-              tags +
-              (s.note ? '<div class="small">' + s.note + "</div>" : "") +
-              "</td>" +
-              "<td>" + audioCell(s.source) + "</td>" +
-              "<td>" + audioCell(s.baseline) + "</td>" +
-              "<td>" + audioCell(s.proposed) + "</td>" +
-              "<td>" + audioCell(s.target) + "</td>" +
-              "</tr>"
-            );
+        const rows = directionOrder
+          .map(function (direction) {
+            const samples = (grouped[direction] || []).slice(0, 2);
+            while (samples.length < 2) samples.push({});
+            return samples
+              .map(function (s, idx) {
+                const tags = (s.tags || [])
+                  .map(function (t) {
+                    return '<span class="tag">' + t + "</span>";
+                  })
+                  .join("");
+                const directionCell =
+                  idx === 0
+                    ? "<td class=\"direction-cell\" rowspan=\"2\"><strong>" + direction + "</strong></td>"
+                    : "";
+                const sourceCell =
+                  "<td>" +
+                  audioCell(s.source) +
+                  (tags || s.note
+                    ? '<div class="small" style="margin-top:6px;">' +
+                      (tags || "") +
+                      (s.note ? '<div>' + s.note + "</div>" : "") +
+                      "</div>"
+                    : "") +
+                  "</td>";
+
+                return (
+                  "<tr>" +
+                  directionCell +
+                  sourceCell +
+                  "<td>" + audioCell(s.baseline) + "</td>" +
+                  "<td>" + audioCell(s.proposed) + "</td>" +
+                  "</tr>"
+                );
+              })
+              .join("");
           })
           .join("");
 
         return (
-          '<div class="card">' +
+          '<div class="sample-section">' +
           "<h3>" + (section.title || "Section") + "</h3>" +
           (section.description ? "<p>" + section.description + "</p>" : "") +
           '<div class="table-wrap">' +
           "<table>" +
+          '<colgroup><col class="col-direction" /><col class="col-audio" /><col class="col-audio" /><col class="col-audio" /></colgroup>' +
           "<thead><tr>" +
-          "<th>Case</th><th>Source</th><th>Baseline</th><th>Proposed</th><th>Target</th>" +
+          "<th>Direction</th><th>Source</th><th>Baseline</th><th>Proposed</th>" +
           "</tr></thead>" +
           "<tbody>" + rows + "</tbody>" +
           "</table>" +
@@ -253,7 +363,8 @@
         box.className = isError ? "status error" : "status";
       }
 
-      fetch("./samples.json")
+      const samplesUrl = "./samples.json?t=" + Date.now();
+      fetch(samplesUrl, { cache: "no-store" })
         .then(function (res) {
           if (!res.ok) throw new Error("Cannot load samples.json");
           return res.json();

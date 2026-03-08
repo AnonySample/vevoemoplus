@@ -11,30 +11,276 @@
     ]
   },
   "figure_caption": "Framework Overview",
-  "subset_note": "Subset setting: 4 speakers, cross-emotion directions only, 4 candidate samples per speaker-direction (320 total candidates). The rows below are demo picks.",
   "sections": [
     {
-      "title": "Neutral to Emotional",
-      "description": "Source and target speakers are both seen during training.",
+      "title": "Neutral as Source",
+      "description": "All conversion directions starting from Neutral.",
       "samples": [
         {
-          "speaker": "0011",
-          "direction": "Neutral -> Surprise",
-          "source": "./Samples/gt/0011_000321.wav",
-          "baseline": "./Samples/baseline/0011_000321_Neutral_to_0011_001708_Surprise_voice.wav",
-          "proposed": "./Samples/proposed/0011_000321_Neutral_to_0011_001708_Surprise.wav",
-          "target": "./Samples/gt/0011_001721.wav"
+          "direction": "Neutral -> Angry",
+          "source": "./Samples/gt/0011_000326.wav",
+          "baseline": "./Samples/baseline/0011_000326_Neutral_to_0011_000661_Angry_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_000326_Neutral_to_0011_000661_Angry.wav"
         },
         {
-          "speaker": "0011",
           "direction": "Neutral -> Angry",
-          "source": "./Samples/gt/0011_000348.wav",
-          "baseline": "./Samples/baseline/0011_000348_Neutral_to_0011_000662_Angry_voice.wav",
-          "proposed": "./Samples/proposed/0011_000348_Neutral_to_0011_000662_Angry.wav",
-          "target": "./Samples/gt/0011_000698.wav"
+          "source": "./Samples/gt/0019_000346.wav",
+          "baseline": "./Samples/baseline/0019_000346_Neutral_to_0019_000663_Angry_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_000346_Neutral_to_0019_000663_Angry.wav"
+        },
+        {
+          "direction": "Neutral -> Happy",
+          "source": "./Samples/gt/0019_000350.wav",
+          "baseline": "./Samples/baseline/0019_000350_Neutral_to_0019_001017_Happy_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_000350_Neutral_to_0019_001017_Happy.wav"
+        },
+        {
+          "direction": "Neutral -> Happy",
+          "source": "./Samples/gt/0011_000327.wav",
+          "baseline": "./Samples/baseline/0011_000327_Neutral_to_0011_001018_Happy_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_000327_Neutral_to_0011_001018_Happy.wav"
+        },
+        {
+          "direction": "Neutral -> Sad",
+          "source": "./Samples/gt/0016_000350.wav",
+          "baseline": "./Samples/baseline/0016_000350_Neutral_to_0016_001363_Sad_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_000350_Neutral_to_0016_001363_Sad.wav"
+        },
+        {
+          "direction": "Neutral -> Sad",
+          "source": "./Samples/gt/0019_000339.wav",
+          "baseline": "./Samples/baseline/0019_000339_Neutral_to_0019_001362_Sad_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_000339_Neutral_to_0019_001362_Sad.wav"
+        },
+        {
+          "direction": "Neutral -> Surprise",
+          "source": "./Samples/gt/0013_000334.wav",
+          "baseline": "./Samples/baseline/0013_000334_Neutral_to_0013_001701_Surprise_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_000334_Neutral_to_0013_001701_Surprise.wav"
+        },
+        {
+          "direction": "Neutral -> Surprise",
+          "source": "./Samples/gt/0011_000321.wav",
+          "baseline": "./Samples/baseline/0011_000321_Neutral_to_0011_001708_Surprise_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_000321_Neutral_to_0011_001708_Surprise.wav"
         }
       ]
-      
+    },
+    {
+      "title": "Angry as Source",
+      "description": "All conversion directions starting from Angry.",
+      "samples": [
+        {
+          "direction": "Angry -> Neutral",
+          "source": "./Samples/gt/0013_000699.wav",
+          "baseline": "./Samples/baseline/0013_000699_Angry_to_0013_000318_Neutral_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_000699_Angry_to_0013_000318_Neutral.wav"
+        },
+        {
+          "direction": "Angry -> Neutral",
+          "source": "./Samples/gt/0019_000673.wav",
+          "baseline": "./Samples/baseline/0019_000673_Angry_to_0019_000302_Neutral_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_000673_Angry_to_0019_000302_Neutral.wav"
+        },
+        {
+          "direction": "Angry -> Happy",
+          "source": "./Samples/gt/0019_000683.wav",
+          "baseline": "./Samples/baseline/0019_000683_Angry_to_0019_001018_Happy_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_000683_Angry_to_0019_001018_Happy.wav"
+        },
+        {
+          "direction": "Angry -> Happy",
+          "source": "./Samples/gt/0016_000694.wav",
+          "baseline": "./Samples/baseline/0016_000694_Angry_to_0016_001014_Happy_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_000694_Angry_to_0016_001014_Happy.wav"
+        },
+        {
+          "direction": "Angry -> Sad",
+          "source": "./Samples/gt/0019_000691.wav",
+          "baseline": "./Samples/baseline/0019_000691_Angry_to_0019_001351_Sad_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_000691_Angry_to_0019_001351_Sad.wav"
+        },
+        {
+          "direction": "Angry -> Sad",
+          "source": "./Samples/gt/0011_000673.wav",
+          "baseline": "./Samples/baseline/0011_000673_Angry_to_0011_001350_Sad_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_000673_Angry_to_0011_001350_Sad.wav"
+        },
+        {
+          "direction": "Angry -> Surprise",
+          "source": "./Samples/gt/0011_000672.wav",
+          "baseline": "./Samples/baseline/0011_000672_Angry_to_0011_001714_Surprise_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_000672_Angry_to_0011_001714_Surprise.wav"
+        },
+        {
+          "direction": "Angry -> Surprise",
+          "source": "./Samples/gt/0019_000692.wav",
+          "baseline": "./Samples/baseline/0019_000692_Angry_to_0019_001719_Surprise_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_000692_Angry_to_0019_001719_Surprise.wav"
+        }
+      ]
+    },
+    {
+      "title": "Happy as Source",
+      "description": "All conversion directions starting from Happy.",
+      "samples": [
+        {
+          "direction": "Happy -> Neutral",
+          "source": "./Samples/gt/0011_001023.wav",
+          "baseline": "./Samples/baseline/0011_001023_Happy_to_0011_000316_Neutral_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_001023_Happy_to_0011_000316_Neutral.wav"
+        },
+        {
+          "direction": "Happy -> Neutral",
+          "source": "./Samples/gt/0013_001023.wav",
+          "baseline": "./Samples/baseline/0013_001023_Happy_to_0013_000317_Neutral_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_001023_Happy_to_0013_000317_Neutral.wav"
+        },
+        {
+          "direction": "Happy -> Sad",
+          "source": "./Samples/gt/0019_001041.wav",
+          "baseline": "./Samples/baseline/0019_001041_Happy_to_0019_001365_Sad_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_001041_Happy_to_0019_001365_Sad.wav"
+        },
+        {
+          "direction": "Happy -> Sad",
+          "source": "./Samples/gt/0013_001034.wav",
+          "baseline": "./Samples/baseline/0013_001034_Happy_to_0013_001361_Sad_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_001034_Happy_to_0013_001361_Sad.wav"
+        },
+        {
+          "direction": "Happy -> Angry",
+          "source": "./Samples/gt/0016_001021.wav",
+          "baseline": "./Samples/baseline/0016_001021_Happy_to_0016_000662_Angry_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_001021_Happy_to_0016_000662_Angry.wav"
+        },
+        {
+          "direction": "Happy -> Angry",
+          "source": "./Samples/gt/0019_001041.wav",
+          "baseline": "./Samples/baseline/0019_001041_Happy_to_0019_000667_Angry_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_001041_Happy_to_0019_000667_Angry.wav"
+        },
+        {
+          "direction": "Happy -> Surprise",
+          "source": "./Samples/gt/0013_001039.wav",
+          "baseline": "./Samples/baseline/0013_001039_Happy_to_0013_001710_Surprise_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_001039_Happy_to_0013_001710_Surprise.wav"
+        },
+        {
+          "direction": "Happy -> Surprise",
+          "source": "./Samples/gt/0016_001034.wav",
+          "baseline": "./Samples/baseline/0016_001034_Happy_to_0016_001709_Surprise_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_001034_Happy_to_0016_001709_Surprise.wav"
+        }
+      ]
+    },
+    {
+      "title": "Sad as Source",
+      "description": "All conversion directions starting from Sad.",
+      "samples": [
+        {
+          "direction": "Sad -> Neutral",
+          "source": "./Samples/gt/0016_001384.wav",
+          "baseline": "./Samples/baseline/0016_001384_Sad_to_0016_000317_Neutral_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_001384_Sad_to_0016_000317_Neutral.wav"
+        },
+        {
+          "direction": "Sad -> Neutral",
+          "source": "./Samples/gt/0019_001394.wav",
+          "baseline": "./Samples/baseline/0019_001394_Sad_to_0019_000305_Neutral_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_001394_Sad_to_0019_000305_Neutral.wav"
+        },
+        {
+          "direction": "Sad -> Angry",
+          "source": "./Samples/gt/0019_001394.wav",
+          "baseline": "./Samples/baseline/0019_001394_Sad_to_0019_000662_Angry_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_001394_Sad_to_0019_000662_Angry.wav"
+        },
+        {
+          "direction": "Sad -> Angry",
+          "source": "./Samples/gt/0013_001376.wav",
+          "baseline": "./Samples/baseline/0013_001376_Sad_to_0013_000651_Angry_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_001376_Sad_to_0013_000651_Angry.wav"
+        },
+        {
+          "direction": "Sad -> Surprise",
+          "source": "./Samples/gt/0013_001395.wav",
+          "baseline": "./Samples/baseline/0013_001395_Sad_to_0013_001719_Surprise_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_001395_Sad_to_0013_001719_Surprise.wav"
+        },
+        {
+          "direction": "Sad -> Surprise",
+          "source": "./Samples/gt/0011_001382.wav",
+          "baseline": "./Samples/baseline/0011_001382_Sad_to_0011_001702_Surprise_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_001382_Sad_to_0011_001702_Surprise.wav"
+        },
+        {
+          "direction": "Sad -> Happy",
+          "source": "./Samples/gt/0011_001371.wav",
+          "baseline": "./Samples/baseline/0011_001371_Sad_to_0011_001009_Happy_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_001371_Sad_to_0011_001009_Happy.wav"
+        },
+        {
+          "direction": "Sad -> Happy",
+          "source": "./Samples/gt/0016_001391.wav",
+          "baseline": "./Samples/baseline/0016_001391_Sad_to_0016_001008_Happy_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_001391_Sad_to_0016_001008_Happy.wav"
+        }
+      ]
+    },
+    {
+      "title": "Surprise as Source",
+      "description": "All conversion directions starting from Surprise.",
+      "samples": [
+        {
+          "direction": "Surprise -> Neutral",
+          "source": "./Samples/gt/0011_001723.wav",
+          "baseline": "./Samples/baseline/0011_001723_Surprise_to_0011_000316_Neutral_vevovoice.wav",
+          "proposed": "./Samples/proposed/0011_001723_Surprise_to_0011_000316_Neutral.wav"
+        },
+        {
+          "direction": "Surprise -> Neutral",
+          "source": "./Samples/gt/0019_001726.wav",
+          "baseline": "./Samples/baseline/0019_001726_Surprise_to_0019_000319_Neutral_vevovoice.wav",
+          "proposed": "./Samples/proposed/0019_001726_Surprise_to_0019_000319_Neutral.wav"
+        },
+        {
+          "direction": "Surprise -> Sad",
+          "source": "./Samples/gt/0013_001747.wav",
+          "baseline": "./Samples/baseline/0013_001747_Surprise_to_0013_001352_Sad_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_001747_Surprise_to_0013_001352_Sad.wav"
+        },
+        {
+          "direction": "Surprise -> Sad",
+          "source": "./Samples/gt/0016_001724.wav",
+          "baseline": "./Samples/baseline/0016_001724_Surprise_to_0016_001361_Sad_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_001724_Surprise_to_0016_001361_Sad.wav"
+        },
+        {
+          "direction": "Surprise -> Happy",
+          "source": "./Samples/gt/0016_001744.wav",
+          "baseline": "./Samples/baseline/0016_001744_Surprise_to_0016_001010_Happy_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_001744_Surprise_to_0016_001010_Happy.wav"
+        },
+        {
+          "direction": "Surprise -> Happy",
+          "source": "./Samples/gt/0013_001721.wav",
+          "baseline": "./Samples/baseline/0013_001721_Surprise_to_0013_001012_Happy_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_001721_Surprise_to_0013_001012_Happy.wav"
+        },
+        {
+          "direction": "Surprise -> Angry",
+          "source": "./Samples/gt/0013_001729.wav",
+          "baseline": "./Samples/baseline/0013_001729_Surprise_to_0013_000651_Angry_vevovoice.wav",
+          "proposed": "./Samples/proposed/0013_001729_Surprise_to_0013_000651_Angry.wav"
+        },
+        {
+          "direction": "Surprise -> Angry",
+          "source": "./Samples/gt/0016_001739.wav",
+          "baseline": "./Samples/baseline/0016_001739_Surprise_to_0016_000650_Angry_vevovoice.wav",
+          "proposed": "./Samples/proposed/0016_001739_Surprise_to_0016_000650_Angry.wav"
+        }
+      ]
     }
   ]
 }
