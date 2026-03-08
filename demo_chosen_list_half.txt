@@ -1,0 +1,79 @@
+"Neutral --> Angry"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_000326_Neutral_to_0011_000661_Angry.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_000346_Neutral_to_0019_000663_Angry.wav
+
+"Neutral --> Happy"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_000350_Neutral_to_0019_001017_Happy.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_000327_Neutral_to_0011_001018_Happy.wav
+
+"Neutral --> Sad"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_000350_Neutral_to_0016_001363_Sad.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_000339_Neutral_to_0019_001362_Sad.wav
+
+"Neutral --> Surprise" ## 差距巨大 ..
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_000334_Neutral_to_0013_001701_Surprise.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_000321_Neutral_to_0011_001708_Surprise.wav
+
+"Angry --> Neutral"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_000699_Angry_to_0013_000318_Neutral.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_000673_Angry_to_0019_000302_Neutral.wav
+
+"Angry --> Happy"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_000683_Angry_to_0019_001018_Happy.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_000694_Angry_to_0016_001014_Happy.wav
+
+"Angry --> Sad"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_000691_Angry_to_0019_001351_Sad.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_000673_Angry_to_0011_001350_Sad.wav
+
+"Angry --> Surprise"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_000672_Angry_to_0011_001714_Surprise.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_000692_Angry_to_0019_001719_Surprise.wav
+
+"Happy --> Neutral"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_001023_Happy_to_0011_000316_Neutral.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_001023_Happy_to_0013_000317_Neutral.wav
+
+"Happy --> Sad"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_001041_Happy_to_0019_001365_Sad.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_001034_Happy_to_0013_001361_Sad.wav
+
+"Happy --> Angry"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_001021_Happy_to_0016_000662_Angry.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_001041_Happy_to_0019_000667_Angry.wav
+
+"Happy --> Surprise"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_001039_Happy_to_0013_001710_Surprise.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_001034_Happy_to_0016_001709_Surprise.wav
+
+"Sad --> Neutral"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_001384_Sad_to_0016_000317_Neutral.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_001394_Sad_to_0019_000305_Neutral.wav
+
+"Sad --> Angry"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_001394_Sad_to_0019_000662_Angry.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_001376_Sad_to_0013_000651_Angry.wav
+
+"Sad --> Surprise"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_001395_Sad_to_0013_001719_Surprise.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_001382_Sad_to_0011_001702_Surprise.wav
+
+"Sad --> Happy"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_001371_Sad_to_0011_001009_Happy.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_001391_Sad_to_0016_001008_Happy.wav
+
+"Surprise --> Neutral"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0011_001723_Surprise_to_0011_000316_Neutral.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0019_001726_Surprise_to_0019_000319_Neutral.wav
+
+"Surprise --> Sad"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_001747_Surprise_to_0013_001352_Sad.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_001724_Surprise_to_0016_001361_Sad.wav
+
+"Surprise --> Happy"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_001744_Surprise_to_0016_001010_Happy.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_001721_Surprise_to_0013_001012_Happy.wav
+
+"Surprise --> Angry"
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0013_001729_Surprise_to_0013_000651_Angry.wav
+./demo_test_deep_prefix_epoch-0012_step-0047000_loss-0.115780/0016_001739_Surprise_to_0016_000650_Angry.wav
