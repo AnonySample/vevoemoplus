@@ -4,7 +4,7 @@
     "subtitle": "Anonymous Submission to Interspeech 2026",
     "abstract": "Recent advances in zero-shot voice conversion have exhibited potential in emotion control, yet the performance is suboptimal or inconsistent due to their limited expressive capacity. We propose Emotion-Aware Prefix for explicit emotion control in a two-stage voice conversion backbone. We significantly improve emotion conversion performance, doubling the baseline Emotion Conversion Accuracy (ECA) from 42.40% to 85.50% while maintaining linguistic integrity and speech quality, without compromising speaker identity. Our ablation study suggests that a joint control of both sequence modulation and acoustic realization is essential to synthesize distinct emotions. Further-more, comparative analysis verifies the generalizability of proposed method, while it provides insights on the role of acoustic decoupling in maintaining speaker identity."
   },
-  "figure_caption": "Framework Overview",
+  "figure_caption": "Framework Overview: Sequence Modulation Stage performs sequence-level style modeling via Deep-Prefix Prompting of Emotion-Aware Prefix, while Acoustic Realization Stage models the final speech production conditioned on reference speech",
   "sections": [
     {
       "title": "Neutral as Source",
